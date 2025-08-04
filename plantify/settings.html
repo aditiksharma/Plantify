@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantify - Settings</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Navigation -->
+        <nav class="dashboard-nav">
+            <div class="nav-brand">
+                <h1>🌿 Plantify</h1>
+            </div>
+            <div class="nav-menu">
+                <button class="nav-btn" onclick="location.href='dashboard.html'">
+                    <i class="fas fa-home"></i> Dashboard
+                </button>
+                <button class="nav-btn active">
+                    <i class="fas fa-cog"></i> Settings
+                </button>
+            </div>
+            <div class="nav-profile">
+                <span id="userName">User</span>
+                <button class="profile-btn" onclick="location.href='profile-view.html'">
+                    <i class="fas fa-user"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <div class="welcome-section">
+                <h2><i class="fas fa-cog"></i> Settings</h2>
+                <p>Configure your Plantify experience</p>
+            </div>
+
+            <div class="settings-container">
+                <!-- Plant.id API Settings -->
+                <div class="settings-section">
+                    <h3><i class="fas fa-leaf"></i> Plant Identification API</h3>
+                    <p>Configure your Plant.id API key to enable real plant identification.</p>
+                    
+                    <div class="api-setup">
+                        <div class="api-info">
+                            <h4>Get Your Free API Key</h4>
+                            <ol>
+                                <li>Visit <a href="https://web.plant.id/api-access-request/" target="_blank">Plant.id API Access</a></li>
+                                <li>Sign up for a free account</li>
+                                <li>Copy your API key</li>
+                                <li>Paste it below</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="apiKey">Plant.id API Key:</label>
+                            <input type="password" id="apiKey" placeholder="Enter your API key">
+                            <small class="help-text">Your API key is stored locally and never shared</small>
+                        </div>
+                        
+                        <div class="api-actions">
+                            <button class="btn-primary" onclick="saveApiKey()">
+                                <i class="fas fa-save"></i> Save API Key
+                            </button>
+                            <button class="btn-secondary" onclick="testApiKey()">
+                                <i class="fas fa-test-tube"></i> Test Connection
+                            </button>
+                        </div>
+                        
+                        <div id="apiStatus" class="api-status"></div>
+                    </div>
+                </div>
+
+                <!-- Notification Settings -->
+                <div class="settings-section">
+                    <h3><i class="fas fa-bell"></i> Notification Preferences</h3>
+                    <p>Customize how and when you receive watering reminders.</p>
+                    
+                    <div class="notification-settings">
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="browserNotifications" checked>
+                                Enable browser notifications
+                            </label>
+                            <small class="help-text">Receive notifications even when the app is closed</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="emailNotifications">
+                                Enable email notifications
+                            </label>
+                            <small class="help-text">Receive watering reminders via email</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="notificationTime">Preferred notification time:</label>
+                            <select id="notificationTime">
+                                <option value="morning">Morning (8:00 AM)</option>
+                                <option value="afternoon">Afternoon (2:00 PM)</option>
+                                <option value="evening">Evening (6:00 PM)</option>
+                                <option value="custom">Custom time</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group" id="customTimeGroup" style="display: none;">
+                            <label for="customTime">Custom time:</label>
+                            <input type="time" id="customTime" value="09:00">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reminderAdvance">Remind me:</label>
+                            <select id="reminderAdvance">
+                                <option value="0">On the day</option>
+                                <option value="1">1 day before</option>
+                                <option value="2">2 days before</option>
+                            </select>
+                        </div>
+                        
+                        <div class="notification-actions">
+                            <button class="btn-primary" onclick="saveNotificationSettings()">
+                                <i class="fas fa-save"></i> Save Settings
+                            </button>
+                            <button class="btn-secondary" onclick="testNotification()">
+                                <i class="fas fa-bell"></i> Test Notification
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calendar Integration -->
+                <div class="settings-section">
+                    <h3><i class="fas fa-calendar-alt"></i> Calendar Integration</h3>
+                    <p>Sync your watering schedule with your calendar.</p>
+                    
+                    <div class="calendar-settings">
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="calendarSync">
+                                Sync watering schedule to calendar
+                            </label>
+                            <small class="help-text">Create calendar events for watering reminders</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="calendarType">Calendar type:</label>
+                            <select id="calendarType">
+                                <option value="ics">Download ICS files</option>
+                                <option value="google">Google Calendar (requires setup)</option>
+                                <option value="outlook">Outlook Calendar</option>
+                            </select>
+                        </div>
+                        
+                        <div class="calendar-actions">
+                            <button class="btn-primary" onclick="exportCalendar()">
+                                <i class="fas fa-download"></i> Export Current Schedule
+                            </button>
+                            <button class="btn-secondary" onclick="setupGoogleCalendar()">
+                                <i class="fab fa-google"></i> Setup Google Calendar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Management -->
+                <div class="settings-section">
+                    <h3><i class="fas fa-database"></i> Data Management</h3>
+                    <p>Manage your Plantify data and preferences.</p>
+                    
+                    <div class="data-actions">
+                        <button class="btn-secondary" onclick="exportData()">
+                            <i class="fas fa-download"></i> Export My Data
+                        </button>
+                        <button class="btn-secondary" onclick="importData()">
+                            <i class="fas fa-upload"></i> Import Data
+                        </button>
+                        <button class="btn-danger" onclick="clearData()">
+                            <i class="fas fa-trash"></i> Clear All Data
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Import Data Modal -->
+    <div id="importModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Import Data</h3>
+                <button class="close-btn" onclick="closeModal('importModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="importFile">Select JSON file:</label>
+                    <input type="file" id="importFile" accept=".json">
+                </div>
+                <div class="form-actions">
+                    <button class="btn-primary" onclick="processImport()">Import</button>
+                    <button class="btn-secondary" onclick="closeModal('importModal')">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/database.js"></script>
+    <script src="js/plant-id-api.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html> 

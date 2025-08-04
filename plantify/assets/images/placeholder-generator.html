@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plantify - Placeholder Image Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .image-container { display: inline-block; margin: 10px; text-align: center; }
+        canvas { border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>Plantify Placeholder Images</h1>
+    <p>This generates placeholder images for the plant database. Right-click and save each image.</p>
+    
+    <div id="images"></div>
+
+    <script>
+        const plants = [
+            'snake-plant', 'pothos', 'zz-plant', 'spider-plant', 'peace-lily', 
+            'succulents', 'aloe-vera', 'chinese-evergreen', 'california-poppy', 
+            'douglas-iris', 'coyote-mint', 'yarrow', 'california-sagebrush'
+        ];
+
+        function generatePlaceholder(name, color = '#4CAF50') {
+            const canvas = document.createElement('canvas');
+            canvas.width = 300;
+            canvas.height = 200;
+            const ctx = canvas.getContext('2d');
+
+            // Background
+            ctx.fillStyle = '#f8f9fa';
+            ctx.fillRect(0, 0, 300, 200);
+
+            // Plant pot
+            ctx.fillStyle = '#8D6E63';
+            ctx.fillRect(100, 140, 100, 40);
+
+            // Plant leaves
+            ctx.fillStyle = color;
+            ctx.beginPath();
+            ctx.ellipse(150, 120, 30, 50, 0, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            ctx.beginPath();
+            ctx.ellipse(130, 100, 25, 40, -0.3, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            ctx.beginPath();
+            ctx.ellipse(170, 100, 25, 40, 0.3, 0, 2 * Math.PI);
+            ctx.fill();
+
+            // Plant name
+            ctx.fillStyle = '#333';
+            ctx.font = '14px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(name.replace('-', ' ').toUpperCase(), 150, 190);
+
+            return canvas;
+        }
+
+        const colors = ['#4CAF50', '#8BC34A', '#CDDC39', '#FFEB3B', '#FF9800', '#FF5722', '#9C27B0', '#3F51B5'];
+
+        plants.forEach((plant, index) => {
+            const container = document.createElement('div');
+            container.className = 'image-container';
+            
+            const canvas = generatePlaceholder(plant, colors[index % colors.length]);
+            container.appendChild(canvas);
+            
+            const link = document.createElement('a');
+            link.href = canvas.toDataURL();
+            link.download = `${plant}.jpg`;
+            link.textContent = `Download ${plant}.jpg`;
+            link.style.display = 'block';
+            link.style.marginTop = '5px';
+            
+            container.appendChild(link);
+            document.getElementById('images').appendChild(container);
+        });
+    </script>
+</body>
+</html> 
