@@ -1,169 +1,91 @@
-# 🌱 Plantify
+# Plantify
 
-A React + Vite web application to help aspiring gardeners who rent their living space make the most of their plants.
+Plantify is a web-based application that aims to aid apartment gardeners, new and old, manage their indoor nurseries by providing a one-stop shop for all things plants! Find local nurseries, keep track of watering schedules, identify plants you see, and more! Check out bellow to see what you grow with Plantify!
 
-## 🚀 Quick Start
+## Features
 
-1. **Navigate to the React project:**
-   ```bash
-   cd plantify-react
-   ```
+1. **User Profile** - Create a profile to get personal recommendations for plants based off how much space, time, and experience you have! 
+2. **Local Plant Nursery Finder** - Users can input their zip codes to find local plant nurseries near them! (Currently bound to Bay Area)
+3. **Native Bay Area Plants** - Our database highlights the native plants that are easier to grow as a beginner, and also cheaper to maintain!
+4. **Virtual Garden** - Log whenever you buy a new plant to add it to your vistual garden! Keep inventory of all your plants and their growth!
+5. **Plant Maintenance Guide** - Low maintenance plant recommendations with filtering
+6. **Plant Watering Scheduler** - Never forget to water your plants again with our automated water schedules! Based on our database, we will recommend watering times and send reminders of when to water you plant.
+7. **Calendar Integration** - Export your plant watering schedule to your go
+8. **Plant Image Recognition** - Upload or take a photo of a plant you want (or see) and find out its name, care info, and even nurseries with it in stock!
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+### Key Functionality
 
-3. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open your browser** and visit `http://localhost:5173`
-
-## 📁 Project Structure
-
-```
-plantify/
-├── plantify-react/          # React + Vite application
-│   ├── src/
-│   │   ├── components/      # Reusable UI components
-│   │   ├── context/         # React Context providers
-│   │   ├── data/           # Plant database and data
-│   │   ├── pages/          # Page components
-│   │   ├── App.jsx         # Main application component
-│   │   ├── App.css         # Global styles
-│   │   └── main.jsx        # Application entry point
-│   ├── public/             # Static assets
-│   ├── package.json        # Dependencies and scripts
-│   └── vite.config.js      # Vite configuration
-├── README.md               # This file
-└── .gitignore             # Git ignore rules
-```
-
-## ✨ Features
-
-### 🌿 Plant Management
 - **Personalized Recommendations**: Get plant suggestions based on your space, experience level, and preferences
-- **Virtual Garden**: Track your plants with a beautiful shelf-like interface
-- **Plant Database**: Comprehensive database of houseplants and Bay Area native plants
-- **Smart Filtering**: Filter plants by maintenance level, light requirements, space type, and more
+- **Bay Area Focus**: Currently supports ZIP codes starting with 94xxx (San Francisco Bay Area)
+- **Renter-Friendly**: Special focus on plants that travel well and don't damage rental spaces
+- **Pet Safety**: Filter for pet-safe plants
+- **Native Plants**: Support local ecosystems with native Bay Area plants
+- **Maintenance Tracking**: Never forget to water your plants again
+- **Local Nurseries**: Find where to buy plants near you
 
-### 🏠 User Profile System
-- **Profile Creation**: Set up your gardening profile with space type, experience level, and preferences
-- **Location-Based**: Bay Area specific recommendations (94xxx ZIP codes)
-- **Preference Tracking**: Pet-safe, travel-friendly, and native plant preferences
+## Getting Started
 
-### 💧 Plant Care
-- **Watering Scheduler**: Track watering schedules for your plants
-- **Maintenance Tasks**: View today's tasks, upcoming tasks, and recently watered plants
-- **Care Reminders**: Never forget to water your plants
+### Prerequisites
 
-### 🏪 Local Features (Coming Soon)
-- **Nursery Finder**: Find local nurseries with specific plants in stock
-- **Plant Identification**: AI-powered plant identification using photos
-- **Location Services**: Enable device location for nearby nursery searches
+- A modern web browser (Chrome, Firefox, Safari, Edge)
+- Internet connection
+- Bay Area ZIP code (94xxx) for full functionality
+- React & Vite to run
 
-## 🛠️ Tech Stack
+### Installation
 
-- **Frontend**: React 18 with Hooks
-- **Build Tool**: Vite
-- **Routing**: React Router v6
-- **State Management**: React Context API
-- **Styling**: CSS with modern features
-- **Icons**: Lucide React
-- **Data Storage**: localStorage for user data
+1. **Clone or Download** the project files
+2. **Open** use React & Vite to start up the app
+3. **Create a Profile** by clicking "Create Your Profile"
+4. **Start Exploring** the dashboard features
 
-## 🎨 UI/UX Features
+### API Setup (Optional)
 
-- **Responsive Design**: Works on desktop, tablet, and mobile
-- **Modern Interface**: Clean, intuitive design with smooth animations
-- **Accessibility**: Keyboard navigation and screen reader support
-- **Loading States**: Beautiful loading animations and feedback
-- **Error Handling**: Graceful error states and user feedback
+For real plant identification:
 
-## 📱 Key Components
+1. **Get Plant.id API Key**:
+   - Visit [Plant.id API Access](https://web.plant.id/api-access-request/)
+   - Sign up for a free account
+   - Copy your API key
 
-### Home Page
-- Welcome message with user profile summary
-- Feature highlights and call-to-action buttons
-- Navigation to create profile or browse plants
+2. **Configure in App**:
+   - Go to Settings in the dashboard
+   - Paste your API key in the Plant Identification section
+   - Test the connection
 
-### Dashboard
-- **Recommendations Tab**: Personalized plant suggestions with filtering
-- **My Garden Tab**: Shelf-like interface for tracking your plants
-- **Maintenance Tab**: Watering schedules and care tasks
-- **Nurseries Tab**: Local nursery finder (coming soon)
-- **Identify Plant Tab**: AI plant identification (coming soon)
+3. **Enable Notifications**:
+   - Allow browser notifications when prompted
+   - Configure notification preferences in Settings
 
-### Profile Page
-- Comprehensive profile creation form
-- Validation for Bay Area ZIP codes
-- Experience level and preference settings
-- Beautiful loading animation
+### API Integration
+- **Plant.id API**: Real plant identification (requires free API key)
+- **Google Calendar API**: Calendar integration (optional)
+- **Browser Notifications API**: Native notification support
 
-## 🔧 Development
+### Data Management
+- **Client-side Database**: Comprehensive plant and nursery data
+- **Local Storage**: User profiles and garden data
+- **Real-time Validation**: ZIP code and form validation
 
-### Project Structure
-- **Components**: Reusable UI components in `src/components/`
-- **Context**: State management in `src/context/`
-- **Data**: Plant database and utilities in `src/data/`
-- **Pages**: Main page components in `src/pages/`
+## License
 
-### Key Features
-- **Plant Database**: Static data for houseplants and native plants
-- **User Context**: Manages user profile and preferences
-- **Plant Context**: Manages garden data and plant operations
-- **Responsive Design**: Mobile-first approach with breakpoints
+This project is for educational and demonstration purposes.
 
-### Data Flow
-1. User creates profile → stored in localStorage
-2. Profile data → used for plant recommendations
-3. User adds plants to garden → stored in localStorage
-4. Garden data → used for maintenance scheduling
+## Acknowledgments
 
-## 🚀 Deployment
+- **Plant Data**: Curated from various horticultural resources
+- **Nursery Information**: Real Bay Area nursery data
+- **Design Inspiration**: Modern plant care and gardening apps
+- **Icons**: Font Awesome for the icon set
 
-### Build for Production
-```bash
-cd plantify-react
-npm run build
-```
+## Support
 
-### Deploy Options
-- **Vercel**: Connect your GitHub repository
-- **Netlify**: Drag and drop the `dist` folder
-- **GitHub Pages**: Use GitHub Actions for automatic deployment
-
-## 🔮 Future Features
-
-### Planned Integrations
-- **Plant.id API**: Real plant identification
-- **Google Calendar**: Watering reminders
-- **Email Notifications**: Care tips and reminders
-- **Geolocation API**: Local nursery finder
-- **Service Workers**: Offline functionality
-
-### Enhanced Features
-- **Plant Photos**: Real plant images from APIs
-- **Care Tips**: Detailed care instructions
-- **Seasonal Recommendations**: Weather-based suggestions
-- **Community Features**: Share garden photos and tips
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
+For questions or issues:
+- Check the browser console for error messages
+- Ensure you're using a Bay Area ZIP code (94xxx)
+- Try refreshing the page if features don't load
+- Clear browser cache if experiencing issues
 
 ---
 
-**🌱 Happy Gardening!** 
-
-Plantify helps you create the perfect garden for your space, no matter how small or temporary it might be. 
+**Happy Planting!**
