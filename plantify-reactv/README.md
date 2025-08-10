@@ -39,26 +39,7 @@ Plantify is a web-based application that aims to aid apartment gardeners, new an
 3. **Create a Profile** by clicking "Create Your Profile"
 4. **Start Exploring** the dashboard features
 
-### API Setup (Optional)
-
-For real plant identification:
-
-1. **Get Plant.id API Key**:
-   - Visit [Plant.id API Access](https://web.plant.id/api-access-request/)
-   - Sign up for a free account
-   - Copy your API key
-
-2. **Configure in App**:
-   - Go to Settings in the dashboard
-   - Paste your API key in the Plant Identification section
-   - Test the connection
-
-3. **Enable Notifications**:
-   - Allow browser notifications when prompted
-   - Configure notification preferences in Settings
-
 ### API Integration
-- **Plant.id API**: Real plant identification (requires free API key)
 - **Google Calendar API**: Calendar integration (optional)
 - **Browser Notifications API**: Native notification support
 
