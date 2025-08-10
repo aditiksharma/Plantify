@@ -19,8 +19,10 @@ const Home = () => {
       <div className="hero-section">
         <div className="hero-content">
           <h1>Let's grow something beautiful together</h1>
-          <p>Your personal plant companion for the Bay Area. Get personalized recommendations, track your garden, and discover local nurseries.</p>
-          
+          <p>Your personal plant companion for the Bay Area</p>
+          <p>Get personalized recommendations, track your garden, and discover local nurseries.</p>
+          <br></br>
+
           {userProfile ? (
             <div className="welcome-section">
               <div className="welcome-message" onClick={handleProfileClick}>
@@ -88,13 +90,13 @@ const Home = () => {
             <p>Never forget to water your plants with smart reminders</p>
           </div>
           
-          <div className="feature-card">
+          <Link to="/dashboard" className="feature-card">
             <div className="feature-icon">
               <Star size={32} />
             </div>
             <h3>Personalized Recommendations</h3>
             <p>Get plant suggestions based on your space and lifestyle</p>
-          </div>
+          </Link>
         </div>
       </div>
     </div>

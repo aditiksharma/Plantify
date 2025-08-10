@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard';
 import { PlantProvider } from './context/PlantContext';
 import { UserProvider } from './context/UserContext';
 import './App.css';
+import "@fontsource/nunito";
 
 function App() {
   const [userProfile, setUserProfile] = useState(null);

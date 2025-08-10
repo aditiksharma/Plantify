@@ -1,15 +1,18 @@
 import { useState } from 'react';
-import { Leaf, Plus, Droplets } from 'lucide-react';
+import { Leaf, Plus, Droplets, MapPin } from 'lucide-react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
 const Dashboard = ({ userProfile }) => {
   const [activeTab, setActiveTab] = useState('recommendations');
+  const [value, onChange] = useState(new Date());
 
   return (
     <div className="dashboard-page">
       <div className="dashboard-header">
         <div className="dashboard-welcome">
           <h1>Welcome back{userProfile?.name ? `, ${userProfile.name}` : ''}! 🌱</h1>
-          <p>Let's grow something beautiful together</p>
+          <p>Let's get growing</p>
         </div>
       </div>
 
@@ -33,7 +36,14 @@ const Dashboard = ({ userProfile }) => {
           onClick={() => setActiveTab('maintenance')}
         >
           <Droplets size={20} />
-          Maintenance
+          Maintenance Schedule
+        </button>
+        <button 
+          className={`tab ${activeTab === 'nurseries' ? 'active' : ''}`}
+          onClick={() => setActiveTab('nurseries')}
+        >
+          <MapPin size={20} />
+          Local Nurseries
         </button>
       </div>
 
@@ -54,8 +64,14 @@ const Dashboard = ({ userProfile }) => {
 
         {activeTab === 'maintenance' && (
           <div className="maintenance-tab">
-            <h2>Maintenance</h2>
-            <p>This is the maintenance tab content.</p>
+            <h2>Maintenance Schedule</h2><br></br><br></br>
+              <Calendar onChange={onChange} value={value} />
+          </div>
+        )}
+
+        {activeTab === 'nurseries' && (
+          <div className="nurseries-tab">
+            <p>Eventually this will include a Google Maps API with Bay Area nurseries</p>
           </div>
         )}
       </div>
