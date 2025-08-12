@@ -8,103 +8,114 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🌿 Welcome to Plantify</h1>
-            <p>Your personal plant care assistant for the Bay Area</p>
-        </header>
-
-        <div class="hero-section">
-            <div class="hero-content">
-                <h2>Grow Your Green Thumb with Confidence</h2>
-                <p>Plantify helps aspiring gardeners and plant parents make the most of their space, whether you're in a tiny apartment or have a full yard. Get personalized plant recommendations, find local nurseries, and never forget to water your plants again!</p>
-                
-                <div class="hero-features">
-                    <div class="feature-item">
-                        <i class="fas fa-seedling"></i>
-                        <span>Personalized Plant Recommendations</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-store"></i>
-                        <span>Local Nursery Finder</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-leaf"></i>
-                        <span>Virtual Garden Tracker</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Smart Watering Reminders</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-camera"></i>
-                        <span>Plant Identification</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Native Bay Area Plants</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="cta-section">
-            <h3>Ready to Start Your Plant Journey?</h3>
-            <p>Create your profile and get personalized recommendations based on your space, lifestyle, and experience level.</p>
-            
-            <div class="cta-buttons">
-                <button class="btn-primary" onclick="location.href='profile.html'">
-                    <i class="fas fa-user-plus"></i> Create Your Profile
-                </button>
-                <button class="btn-secondary" onclick="showDemo()">
-                    <i class="fas fa-play"></i> See How It Works
-                </button>
-            </div>
-        </div>
-
-        <div class="info-section">
-            <h3>Perfect for Bay Area Plant Parents</h3>
-            <div class="info-grid">
-                <div class="info-card">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">
+                <i class="fas fa-leaf navbar-logo"></i>
+                <span>Plantify</span>
+            </a>
+            <div class="navbar-menu">
+                <a href="index.html" class="navbar-link active">
                     <i class="fas fa-home"></i>
-                    <h4>Apartment Dwellers</h4>
-                    <p>Make the most of limited space with plants that thrive indoors and on balconies.</p>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-clock"></i>
-                    <h4>Busy Professionals</h4>
-                    <p>Low-maintenance plants that fit your schedule and don't require constant attention.</p>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-suitcase"></i>
-                    <h4>Renters</h4>
-                    <p>Travel-friendly plants that can move with you and won't damage your space.</p>
-                </div>
-                <div class="info-card">
+                    <span>Home</span>
+                </a>
+                <a href="dashboard.html" class="navbar-link">
                     <i class="fas fa-leaf"></i>
-                    <h4>Nature Enthusiasts</h4>
-                    <p>Discover native Bay Area plants that support local ecosystems and wildlife.</p>
+                    <span>Dashboard</span>
+                </a>
+                <a href="profile.html" class="navbar-link">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+                <a href="settings.html" class="navbar-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </div>
+            <div class="navbar-profile" id="navWelcome">
+                <span id="welcomeMessage">Welcome!</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="home">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1>
+                        <i class="fas fa-seedling hero-icon"></i>
+                        Let's grow something beautiful together
+                    </h1>
+                    <p class="hero-subtitle">Your personal plant companion for the Bay Area</p>
+                    <p class="hero-description">Get personalized recommendations, track your garden, and discover local nurseries.</p>
+                    
+                    <div class="hero-actions">
+                        <button class="btn-primary" onclick="location.href='dashboard.html'">
+                            <i class="fas fa-leaf"></i>
+                            View Your Garden
+                        </button>
+                        <button class="btn-secondary" onclick="location.href='dashboard.html'">
+                            <i class="fas fa-star"></i>
+                            Get Recommendations
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Overview Section -->
+            <div class="features-section">
+                <h2>Everything you need to grow your perfect garden</h2>
+                <div class="features-grid">
+                    <a href="dashboard.html#nurseries" class="feature-card">
+                        <i class="fas fa-map-marker-alt feature-icon"></i>
+                        <h3>Local Nursery Finder</h3>
+                        <p>Find nurseries near you that have the plants you want in stock</p>
+                    </a>
+                    <a href="dashboard.html#identify" class="feature-card">
+                        <i class="fas fa-leaf feature-icon"></i>
+                        <h3>Plant Identification</h3>
+                        <p>Take a photo to identify plants and get care information</p>
+                    </a>
+                    <a href="dashboard.html#recommendations" class="feature-card">
+                        <i class="far fa-star feature-icon"></i>
+                        <h3>Personalized Recommendations</h3>
+                        <p>Get plant suggestions based on your space and lifestyle</p>
+                    </a>
+                    <a href="dashboard.html#maintenance" class="feature-card">
+                        <i class="fas fa-calendar-alt feature-icon"></i>
+                        <h3>Watering Scheduler</h3>
+                        <p>Never forget to water your plants with smart reminders</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- User Information Card (hidden by default) -->
+            <div class="user-card" id="userCard" style="display: none;">
+                <div class="user-card-header">
+                    <h2 id="userCardTitle">Welcome back!</h2>
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <p class="user-card-prompt">Click to view your profile details</p>
+                <div class="user-tags">
+                    <span class="tag">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span id="userZipCode">94587</span>
+                    </span>
+                    <span class="tag">
+                        <i class="fas fa-home"></i>
+                        <span id="userSpace">No Outdoor Space</span>
+                    </span>
+                    <span class="tag">
+                        <i class="fas fa-leaf"></i>
+                        <span id="userExperience">Novice</span>
+                    </span>
                 </div>
             </div>
         </div>
+    </main>
 
-        <div class="location-notice">
-            <div class="notice-content">
-                <i class="fas fa-map-marker-alt"></i>
-                <div>
-                    <h4>Currently Available in the Bay Area</h4>
-                    <p>Plantify is currently focused on serving the San Francisco Bay Area (ZIP codes starting with 94xxx). We're working on expanding to more areas soon!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function showDemo() {
-            // For now, just redirect to profile creation
-            // In a real app, this could show a demo or tutorial
-            location.href = 'profile.html';
-        }
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
