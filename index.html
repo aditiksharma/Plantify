@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantify - Your Personal Plant Care Assistant</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">
+                <i class="fas fa-leaf navbar-logo"></i>
+                <span>Plantify</span>
+            </a>
+            <div class="navbar-menu">
+                <a href="index.html" class="navbar-link active">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="dashboard.html" class="navbar-link">
+                    <i class="fas fa-leaf"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="profile.html" class="navbar-link">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+                <a href="settings.html" class="navbar-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </div>
+            <div class="navbar-profile" id="navWelcome">
+                <span id="welcomeMessage">Welcome!</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="home">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1>
+                        <i class="fas fa-seedling hero-icon"></i>
+                        Let's grow something beautiful together
+                    </h1>
+                    <p class="hero-subtitle">Your personal plant companion for the Bay Area</p>
+                    <p class="hero-description">Get personalized recommendations, track your garden, and discover local nurseries.</p>
+                    
+                    <div class="hero-actions">
+                        <button class="btn-primary" onclick="location.href='dashboard.html'">
+                            <i class="fas fa-leaf"></i>
+                            View Your Garden
+                        </button>
+                        <button class="btn-secondary" onclick="location.href='dashboard.html'">
+                            <i class="fas fa-star"></i>
+                            Get Recommendations
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Overview Section -->
+            <div class="features-section">
+                <h2>Everything you need to grow your perfect garden</h2>
+                <div class="features-grid">
+                    <a href="dashboard.html#nurseries" class="feature-card">
+                        <i class="fas fa-map-marker-alt feature-icon"></i>
+                        <h3>Local Nursery Finder</h3>
+                        <p>Find nurseries near you that have the plants you want in stock</p>
+                    </a>
+                    <a href="dashboard.html#identify" class="feature-card">
+                        <i class="fas fa-leaf feature-icon"></i>
+                        <h3>Plant Identification</h3>
+                        <p>Take a photo to identify plants and get care information</p>
+                    </a>
+                    <a href="dashboard.html#recommendations" class="feature-card">
+                        <i class="far fa-star feature-icon"></i>
+                        <h3>Personalized Recommendations</h3>
+                        <p>Get plant suggestions based on your space and lifestyle</p>
+                    </a>
+                    <a href="dashboard.html#maintenance" class="feature-card">
+                        <i class="fas fa-calendar-alt feature-icon"></i>
+                        <h3>Watering Scheduler</h3>
+                        <p>Never forget to water your plants with smart reminders</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- User Information Card (hidden by default) -->
+            <div class="user-card" id="userCard" style="display: none;">
+                <div class="user-card-header">
+                    <h2 id="userCardTitle">Welcome back!</h2>
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <p class="user-card-prompt">Click to view your profile details</p>
+                <div class="user-tags">
+                    <span class="tag">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span id="userZipCode">94587</span>
+                    </span>
+                    <span class="tag">
+                        <i class="fas fa-home"></i>
+                        <span id="userSpace">No Outdoor Space</span>
+                    </span>
+                    <span class="tag">
+                        <i class="fas fa-leaf"></i>
+                        <span id="userExperience">Novice</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

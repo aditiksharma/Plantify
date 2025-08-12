@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantify - Create Your Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">
+                <i class="fas fa-leaf navbar-logo"></i>
+                <span>Plantify</span>
+            </a>
+            <div class="navbar-menu">
+                <a href="index.html" class="navbar-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="dashboard.html" class="navbar-link">
+                    <i class="fas fa-leaf"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="profile.html" class="navbar-link active">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+                <a href="settings.html" class="navbar-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </div>
+            <div class="navbar-profile">
+                <span>Welcome!</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>🌿 Create Your Plantify Profile</h1>
+            <p>Help us recommend the perfect plants for your space and lifestyle!</p>
+        </header>
+
+        <form id="profileForm" class="profile-form">
+            <div class="form-section">
+                <h2>Basic Information</h2>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required placeholder="Enter your name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="zip">ZIP Code:</label>
+                    <input type="text" id="zip" maxlength="5" required placeholder="Enter your ZIP code">
+                    <small class="help-text">Currently available in Bay Area (94xxx ZIP codes)</small>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Your Space</h2>
+                <div class="form-group">
+                    <label for="space">Living Situation:</label>
+                    <select id="space" required>
+                        <option value="">Select your space type</option>
+                        <option value="No Outdoor Space">No Outdoor Space (Apartment/Studio)</option>
+                        <option value="Balcony">Balcony/Patio</option>
+                        <option value="Yard">House with Yard</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="light">Available Light:</label>
+                    <select id="light" required>
+                        <option value="">Select light conditions</option>
+                        <option value="Low">Low Light (North-facing, few windows)</option>
+                        <option value="Bright Indirect">Bright Indirect (East/West windows)</option>
+                        <option value="Bright Direct">Bright Direct (South-facing, lots of sun)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Experience & Lifestyle</h2>
+                <div class="form-group">
+                    <label for="level">Gardening Experience:</label>
+                    <select id="level" required>
+                        <option value="">Select your experience level</option>
+                        <option value="Novice">Novice (First-time plant parent)</option>
+                        <option value="Intermediate">Intermediate (Some experience)</option>
+                        <option value="Advanced">Advanced (Experienced gardener)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="timeCommitment">Time Commitment:</label>
+                    <select id="timeCommitment" required>
+                        <option value="">Select your available time</option>
+                        <option value="Low">Low (5-10 minutes/week)</option>
+                        <option value="Medium">Medium (15-30 minutes/week)</option>
+                        <option value="High">High (30+ minutes/week)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Preferences</h2>
+                <div class="form-group">
+                    <label for="movingSoon">Moving Plans:</label>
+                    <select id="movingSoon" required>
+                        <option value="">Select your moving timeline</option>
+                        <option value="false">Staying put (1+ years)</option>
+                        <option value="true">Moving soon (within 1 year)</option>
+                    </select>
+                    <small class="help-text">We'll recommend travel-friendly plants if you're moving soon</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="petSafe">Pet Safety:</label>
+                    <select id="petSafe" required>
+                        <option value="">Select pet safety preference</option>
+                        <option value="true">Pet-safe plants only</option>
+                        <option value="false">Any plants (no pets or pets don't eat plants)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="interestedInNative">Native Plants:</label>
+                    <select id="interestedInNative" required>
+                        <option value="">Select native plant preference</option>
+                        <option value="true">Include native Bay Area plants</option>
+                        <option value="false">Standard houseplants only</option>
+                    </select>
+                    <small class="help-text">Native plants support local ecosystems and wildlife</small>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">Create My Profile</button>
+                <button type="button" onclick="location.href='index.html'" class="btn-secondary">Back to Home</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/database.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>
