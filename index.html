@@ -6,12 +6,13 @@
     <title>Plantify</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
 </head>
 <body>
     <!-- Navigation Bar -->
            <nav class="dashboard-nav">
             <a href="index.html" class="nav-brand">
-                <h1>🌱Plantify</h1>
+                <h1>🌱 Plantify</h1>
             </a>
 
             <div class="nav-profile">
@@ -27,7 +28,7 @@
         <div class="home">
             <div class="hero-section">
                 <div class="hero-content">
-                    <i class="fas fa-seedling hero-icon"></i>
+                    <i class="fas fa-seedling hero-icon fa-2xl"></i>
                     <h1>
                         Let's grow something beautiful together
                     </h1>
@@ -35,7 +36,7 @@
                     <p class="hero-description">Get personalized recommendations, track your garden, and discover local nurseries.</p>
                     
                     <div class="hero-actions">
-                        <button class="btn-primary" onclick="location.href='dashboard.html'">
+                        <button class="btn-primary" onclick="location.href='dashboard.html#garden'">
                             <i class="fas fa-leaf"></i>
                             View Your Garden
                         </button>
@@ -100,5 +101,10 @@
     </main>
 
     <script src="js/main.js"></script>
+    <script>
+        const profileData = localStorage.getItem('plantifyProfile');
+        userProfile = JSON.parse(profileData);
+        document.getElementById('userName').textContent = userProfile.name;
+    </script>
 </body>
 </html>

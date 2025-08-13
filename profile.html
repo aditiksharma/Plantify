@@ -6,12 +6,13 @@
     <title>Plantify - Create Your Profile</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
 </head>
 <body>
     <!-- Navigation Bar -->
            <nav class="dashboard-nav">
             <a href="index.html" class="nav-brand">
-                <h1>🌱Plantify</h1>
+                <h1>🌱 Plantify</h1>
             </a>
 
             <div class="nav-profile">
@@ -37,9 +38,15 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="zip">ZIP Code:</label>
-                    <input type="text" id="zip" maxlength="5" required placeholder="Enter your ZIP code">
-                    <small class="help-text">Currently available in Bay Area (94xxx ZIP codes)</small>
+                    <label for="location">Location:</label>
+                    <select id="location" required>
+                        <option value="">Choose the region of the Bay Area where you live</option>
+                        <option value="SF">San Francisco</option>
+                        <option value="Peninsula">Peninsula</option>
+                        <option value="East Bay">East Bay</option>
+                        <option value="South Bay">South Bay</option>
+                        <option value="North Bay">North Bay</option>
+                    </select>
                 </div>
             </div>
 
@@ -98,7 +105,7 @@
                         <option value="false">Staying put (1+ years)</option>
                         <option value="true">Moving soon (within 1 year)</option>
                     </select>
-                    <small class="help-text">We'll recommend travel-friendly plants if you're moving soon</small>
+                    <small class="help-text">Travel friendly plants include potted plants, or plants that can be easily propogated from cuttings</small>
                 </div>
 
                 <div class="form-group">
@@ -117,7 +124,8 @@
                         <option value="true">Include native Bay Area plants</option>
                         <option value="false">Standard houseplants only</option>
                     </select>
-                    <small class="help-text">Native plants support local ecosystems and wildlife</small>
+                    <small class="help-text native-blurb">Native plants support local ecosystems and wildlife</small><br>
+                    <small class="help-text native-blurb">Native plants that are planted in outdoors may have more intense watering demands for the first couple years <br>However, many California plants are drought tolerant once they become established</small>
                 </div>
             </div>
 

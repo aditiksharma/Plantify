@@ -362,7 +362,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 320px;
+  height: 220px;
   width: 100%;
   min-width: 0;
   color: inherit;
@@ -570,6 +570,7 @@ header p {
     color: #6c757d;
     margin-top: 5px;
     display: block;
+    text-align: center;
 }
 
 /* Button Styles */
@@ -673,12 +674,14 @@ header p {
     position: sticky;
     top: 0;
     z-index: 1000;
+    text-decoration: none;
 }
 
 .nav-brand h1 {
     color: #2c5530;
     font-size: 1.8rem;
     margin: 0;
+    text-decoration: none;
 }
 
 .nav-menu {

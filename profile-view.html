@@ -6,12 +6,13 @@
     <title>Your Plantify Profile</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
 </head>
 <body>
     <!-- Navigation Bar -->
         <nav class="dashboard-nav">
             <a href="index.html" class="nav-brand">
-                <h1>🌱Plantify</h1>
+                <h1>🌱 Plantify</h1>
             </a>
             <div class="nav-menu">
                 <button class="nav-btn" onclick="location.href='dashboard.html?section=recommendations'">
@@ -65,5 +66,10 @@
     </div>
 
     <script src="js/profile-view.js"></script>
+    <script>
+        const profileData = localStorage.getItem('plantifyProfile');
+        userProfile = JSON.parse(profileData);
+        document.getElementById('userName').textContent = userProfile.name;
+    </script>
 </body>
 </html>
