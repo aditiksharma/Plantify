@@ -664,7 +664,7 @@ function renderGarden() {
                     </p>
                 </div>
                 <div class="garden-actions">
-                    <button class="btn-secondary" onclick="waterPlant(${plant.id})">
+                    <button class="btn-secondary" style="background-color: #42b8e3" onclick="waterPlant(${plant.id})">
                         <i class="fas fa-tint"></i> Water Now
                     </button>
                     <button class="btn-secondary" onclick="editPlant(${plant.id})">
