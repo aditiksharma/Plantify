@@ -168,8 +168,8 @@
                             <h3>Custom Care Tips</h3><br>
                             <form id="suggestionForm">
                             <div class="custom-card-text" style="justify-content: center;">
-                                <label for="plantName">Plant:  </label>
-                                <input type="text" id="plantName"><br><br>
+                                <label for="plantNameForm">Plant:  </label>
+                                <input type="text" id="plantNameForm"><br><br>
                                 <label for="plantProblem">Problem:  </label> 
                                 <input type="text" id="plantProblem"><br><br>
                                 <label for="outdoors">Outdoors:</label>
@@ -270,7 +270,7 @@
         async function getRec(event) {
             event.preventDefault();
 
-            const plantName = document.getElementById("plantName").value;
+            const plantNameForm = document.getElementById("plantNameForm").value;
             const plantProblem = document.getElementById("plantProblem").value;
             const placeInput = document.querySelector('input[name="place"]:checked').value;
 
@@ -286,7 +286,7 @@
                 },
                 body: JSON.stringify({
                 // fill variables here.
-                "plant": plantName,
+                "plant": plantNameForm,
                 "problem": plantProblem,
                 "outdoors": placeInput,
                 }),
