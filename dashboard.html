@@ -28,9 +28,6 @@
                 <button class="nav-btn" data-section="maintenance">
                     <i class="fas fa-calendar-alt"></i> Maintenance
                 </button>
-                <button class="nav-btn" data-section="identify">
-                    <i class="fas fa-camera"></i> Identify Plant
-                </button>
                 <button class="nav-btn" onclick="location.href='settings.html'">
                     <i class="fas fa-cog"></i> Settings
                 </button>
@@ -152,25 +149,41 @@
                         <i class="fas fa-download"></i> Export to Calendar
                     </button>
                 </div>
-                
-                <div class="maintenance-overview">
-                    <div class="maintenance-card urgent">
-                        <h3>Today's Tasks</h3>
-                        <div id="todayTasks" class="task-list">
-                            <!-- Today's tasks -->
+                    <div class="maintenance-overview">
+                        
+                        <div class="maintenance-card urgent">
+                            <h3>Today's Tasks</h3>
+                            <div id="todayTasks" class="task-list">
+                                <!-- Today's tasks -->
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="maintenance-card upcoming">
-                        <h3>This Week</h3>
-                        <div id="weekTasks" class="task-list">
-                            <!-- This week's tasks -->
+                        <div class="maintenance-card upcoming">
+                            <h3>This Week</h3>
+                            <div id="weekTasks" class="task-list">
+                                <!-- This week's tasks -->
+                            </div>
                         </div>
-                    </div>
-                </div>
+                </div><br>
+                <div class="custom-card">
+                            <h3>Custom Care Tips</h3><br>
+                            <form>
+                            <div class="custom-card-text" style="justify-content: center;">
+                                <label for="plantName">Plant:  </label>
+                                <input type="text" id="plantName"><br><br>
+                                <label for="plantProblem">Problem:  </label> 
+                                <input type="text" id="plantProblem"><br><br>
+                                <label for="outdoors">Outdoors:</label>
+                                <input type="radio" id="outdoors" name="place" value="true">
+                                <label for="indoors">Indoors:</label>
+                                <input type="radio" id="indoors" name="place" value="false"><br><br><br>
+                                <input type="submit" id = "submitter" value="Submit" style="display: block; margin: 0 auto; font-family: 'Nunito', sans-serif">
+                                <br><br><div id="aiSuggestion" style="padding: 10px"></div>
+                            </div>
+                            </form>
+                        </div>
             </section>
 
-            <!-- Plant Identification Section -->
+            <!-- Plant Identification Section 
             <section id="identify" class="dashboard-section" data-section="identify">
                 <div class="section-header">
                     <h2><i class="fas fa-camera"></i> Plant Identification</h2>
@@ -182,13 +195,14 @@
                         <i class="fas fa-camera fa-3x"></i>
                         <p>Click to upload a photo or drag and drop</p>
                         <input type="file" id="plantImage" accept="image/*" style="display: none;">
+                        <input id="submitImg" type="button" value="Submit Image" onclick="identifyPlant();" />
                     </div>
                     
                     <div id="identificationResult" class="identification-result" style="display: none;">
-                        <!-- Identification results will appear here -->
+                        Identification results will appear here
                     </div>
                 </div>
-            </section>
+            </section>-->
         </main>
     </div>
 
@@ -249,5 +263,40 @@
     <script src="js/plant-id-api.js?v=999"></script>
     <script src="js/notifications.js?v=999"></script>
     <script src="js/dashboard.js?v=999"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        const submitButton = document.getElementById("submitter");
+        submitButton.addEventListener("click", getRec);
+        async function getRec(event) {
+            event.preventDefault();
+
+            const plantName = document.getElementById("plantName").value;
+            const plantProblem = document.getElementById("plantProblem").value;
+            const placeInput = document.querySelector('input[name="place"]:checked').value;
+
+            const response = await fetch(
+            'https://noggin.rea.gent/beneficial-finch-3722',
+            {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer rg_v1_c3zo34fflloduk52uwmw6ux0n7szrildkpva_ngk',
+                },
+                body: JSON.stringify({
+                // fill variables here.
+                "plant": plantName,
+                "problem": plantProblem,
+                "outdoors": placeInput,
+                }),
+            }
+            ).then(response => response.text());
+
+            document.getElementById("aiSuggestion").innerHTML = marked.parse(response);
+
+            plantName.value = "";
+            plantProblem.value = "";
+            placeInput.value = "";
+        }
+    </script>
 </body>
 </html> 

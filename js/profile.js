@@ -3,7 +3,7 @@ document.getElementById('profileForm').addEventListener('submit', function(e) {
     
     // Get all form values
     const name = document.getElementById('name').value.trim();
-    const zip = document.getElementById('zip').value.trim();
+    const location = document.getElementById('location').value.trim();
     const space = document.getElementById('space').value;
     const light = document.getElementById('light').value;
     const level = document.getElementById('level').value;
@@ -27,7 +27,7 @@ document.getElementById('profileForm').addEventListener('submit', function(e) {
     // Create profile object
     const profile = {
         name,
-        zip,
+        location,
         space,
         light,
         level,
