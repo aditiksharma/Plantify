@@ -149,27 +149,28 @@
                         <i class="fas fa-download"></i> Export to Calendar
                     </button>
                 </div>
-                    <div class="maintenance-overview">
-                        
-                        <div class="maintenance-card urgent">
-                            <h3>Today's Tasks</h3>
-                            <div id="todayTasks" class="task-list">
-                                <!-- Today's tasks -->
-                            </div>
+                
+                <div class="maintenance-overview">
+                    <div class="maintenance-card urgent">
+                        <h3>Today's Tasks</h3>
+                        <div id="todayTasks" class="task-list">
+                            <!-- Today's tasks -->
                         </div>
-                        <div class="maintenance-card upcoming">
-                            <h3>This Week</h3>
-                            <div id="weekTasks" class="task-list">
-                                <!-- This week's tasks -->
-                            </div>
+                    </div>
+                    
+                    <div class="maintenance-card upcoming">
+                        <h3>This Week</h3>
+                        <div id="weekTasks" class="task-list">
+                            <!-- This week's tasks -->
                         </div>
-                </div><br>
-                <div class="custom-card">
-                            <h3>Custom Care Tips</h3><br>
-                            <form id="suggestionForm">
+                    </div>
+
+                    <div class="custom-card">
+                        <h3>Custom Care Tips</h3><br>
+                        <form id="suggestionForm"></form>
                             <div class="custom-card-text" style="justify-content: center;">
-                                <label for="plantNameForm">Plant:  </label>
-                                <input type="text" id="plantNameForm"><br><br>
+                                <label for="plantName">Plant:  </label>
+                                <input type="text" id="plantName"><br><br>
                                 <label for="plantProblem">Problem:  </label> 
                                 <input type="text" id="plantProblem"><br><br>
                                 <label for="outdoors">Outdoors:</label>
@@ -179,8 +180,9 @@
                                 <input type="submit" id = "submitter" value="Submit" style="display: block; margin: 0 auto; font-family: 'Nunito', sans-serif">
                                 <br><br><div id="aiSuggestion" style="padding: 10px"></div>
                             </div>
-                            </form>
+                        </form>
                         </div>
+                </div>
             </section>
 
             <!-- Plant Identification Section 
@@ -270,10 +272,9 @@
         async function getRec(event) {
             event.preventDefault();
 
-            const plantNameForm = document.getElementById("plantNameForm").value;
+            const plantName = document.getElementById("plantName").value;
             const plantProblem = document.getElementById("plantProblem").value;
             const placeInput = document.querySelector('input[name="place"]:checked').value;
-
             document.getElementById('suggestionForm').reset();
 
             const response = await fetch(
@@ -286,7 +287,7 @@
                 },
                 body: JSON.stringify({
                 // fill variables here.
-                "plant": plantNameForm,
+                "plant": plantName,
                 "problem": plantProblem,
                 "outdoors": placeInput,
                 }),
@@ -295,12 +296,6 @@
 
             document.getElementById("aiSuggestion").innerHTML = marked.parse(response);
         }
-
-        const profileData = localStorage.getItem('plantifyProfile');
-        userProfile = JSON.parse(profileData);
-        document.getElementById('userName').textContent = userProfile.name;
-        document.getElementById('welcomeName').textContent = userProfile.name;
-    </script>
     </script>
 </body>
 </html> 

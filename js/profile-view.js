@@ -36,6 +36,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     <span class="value">${profileData.zip}</span>
                 </div>
                 <div class="profile-detail">
+                    <span class="label">Location:</span>
+                    <span class="value">${profileData.location}</span>
+                </div>
+                <div class="profile-detail">
                     <span class="label">Member Since:</span>
                     <span class="value">${createdDate}</span>
                 </div>
