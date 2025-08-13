@@ -295,6 +295,12 @@
 
             document.getElementById("aiSuggestion").innerHTML = marked.parse(response);
         }
+
+        const profileData = localStorage.getItem('plantifyProfile');
+        userProfile = JSON.parse(profileData);
+        document.getElementById('userName').textContent = userProfile.name;
+        document.getElementById('welcomeName').textContent = userProfile.name;
+    </script>
     </script>
 </body>
 </html> 
