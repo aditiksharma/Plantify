@@ -28,9 +28,6 @@
                 <button class="nav-btn" data-section="maintenance">
                     <i class="fas fa-calendar-alt"></i> Maintenance
                 </button>
-                <button class="nav-btn" data-section="identify">
-                    <i class="fas fa-camera"></i> Identify Plant
-                </button>
                 <button class="nav-btn" onclick="location.href='settings.html'">
                     <i class="fas fa-cog"></i> Settings
                 </button>
@@ -167,6 +164,24 @@
                             <!-- This week's tasks -->
                         </div>
                     </div>
+
+                    <div class="custom-card">
+                        <h3>Custom Care Tips</h3><br>
+                        <form id="suggestionForm"></form>
+                            <div class="custom-card-text" style="justify-content: center;">
+                                <label for="plantName">Plant:  </label>
+                                <input type="text" id="plantName"><br><br>
+                                <label for="plantProblem">Problem:  </label> 
+                                <input type="text" id="plantProblem"><br><br>
+                                <label for="outdoors">Outdoors:</label>
+                                <input type="radio" id="outdoors" name="place" value="true">
+                                <label for="indoors">Indoors:</label>
+                                <input type="radio" id="indoors" name="place" value="false"><br><br><br>
+                                <input type="submit" id = "submitter" value="Submit" style="display: block; margin: 0 auto; font-family: 'Nunito', sans-serif">
+                                <br><br><div id="aiSuggestion" style="padding: 10px"></div>
+                            </div>
+                        </form>
+                        </div>
                 </div>
             </section>
 
@@ -249,5 +264,37 @@
     <script src="js/plant-id-api.js?v=999"></script>
     <script src="js/notifications.js?v=999"></script>
     <script src="js/dashboard.js?v=999"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        const submitButton = document.getElementById("submitter");
+        submitButton.addEventListener("click", getRec);
+        async function getRec(event) {
+            event.preventDefault();
+
+            const plantName = document.getElementById("plantName").value;
+            const plantProblem = document.getElementById("plantProblem").value;
+            const placeInput = document.querySelector('input[name="place"]:checked').value;
+            document.getElementById('suggestionForm').reset();
+
+            const response = await fetch(
+            'https://noggin.rea.gent/beneficial-finch-3722',
+            {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer rg_v1_c3zo34fflloduk52uwmw6ux0n7szrildkpva_ngk',
+                },
+                body: JSON.stringify({
+                // fill variables here.
+                "plant": plantName,
+                "problem": plantProblem,
+                "outdoors": placeInput,
+                }),
+            }
+            ).then(response => response.text());
+
+            document.getElementById("aiSuggestion").innerHTML = marked.parse(response);
+        }
+    </script>
 </body>
 </html> 

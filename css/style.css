@@ -362,7 +362,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 220px;
+  height: 270px;
   width: 100%;
   min-width: 0;
   color: inherit;
@@ -1247,6 +1247,30 @@ header p {
 .maintenance-card.upcoming {
     border-left: 4px solid #ffc107;
 }
+
+.custom-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #28a745;
+}
+
+.custom-card-text {
+  align-items: center; 
+  justify-content: center;
+}
+
+.custom-card-text input:not(input[type="radio"]) {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 250px;
+  height: 35px;
+  align-items: end;
+}
+
 
 .maintenance-card h3 {
     color: #2c5530;

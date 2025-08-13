@@ -28,9 +28,6 @@
                 <button class="nav-btn" onclick="location.href='dashboard.html?section=maintenance'">
                     <i class="fas fa-calendar-alt"></i> Maintenance
                 </button>
-                <button class="nav-btn" onclick="location.href='dashboard.html?section=identify'">
-                    <i class="fas fa-camera"></i> Identify Plant
-                </button>
                 <button class="nav-btn" onclick="location.href='settings.html'">
                     <i class="fas fa-cog"></i> Settings
                 </button>
@@ -51,40 +48,6 @@
             </div>
 
             <div class="settings-container">
-                <!-- Plant.id API Settings -->
-                <div class="settings-section">
-                    <h3><i class="fas fa-leaf"></i> Plant Identification API</h3>
-                    <p>Configure your Plant.id API key to enable real plant identification.</p>
-                    
-                    <div class="api-setup">
-                        <div class="api-info">
-                            <h4>Get Your Free API Key</h4>
-                            <ol>
-                                <li>Visit <a href="https://web.plant.id/api-access-request/" target="_blank">Plant.id API Access</a></li>
-                                <li>Sign up for a free account</li>
-                                <li>Copy your API key</li>
-                                <li>Paste it below</li>
-                            </ol>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="apiKey">Plant.id API Key:</label>
-                            <input type="password" id="apiKey" placeholder="Enter your API key">
-                            <small class="help-text">Your API key is stored locally and never shared</small>
-                        </div>
-                        
-                        <div class="api-actions">
-                            <button class="btn-primary" onclick="saveApiKey()">
-                                <i class="fas fa-save"></i> Save API Key
-                            </button>
-                            <button class="btn-secondary" onclick="testApiKey()">
-                                <i class="fas fa-test-tube"></i> Test Connection
-                            </button>
-                        </div>
-                        
-                        <div id="apiStatus" class="api-status"></div>
-                    </div>
-                </div>
 
                 <!-- Notification Settings -->
                 <div class="settings-section">
