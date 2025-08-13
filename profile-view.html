@@ -9,40 +9,42 @@
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="index.html" class="navbar-brand">
-                <i class="fas fa-leaf navbar-logo"></i>
-                <span>Plantify</span>
+        <nav class="dashboard-nav">
+            <a href="index.html" class="nav-brand">
+                <h1>🌱Plantify</h1>
             </a>
-            <div class="navbar-menu">
-                <a href="index.html" class="navbar-link">
-                    <i class="fas fa-home"></i>
-                    <span>Home</span>
-                </a>
-                <a href="dashboard.html" class="navbar-link">
-                    <i class="fas fa-leaf"></i>
-                    <span>Dashboard</span>
-                </a>
-                <a href="profile.html" class="navbar-link active">
+            <div class="nav-menu">
+                <button class="nav-btn" onclick="location.href='dashboard.html?section=recommendations'">
+                    <i class="fas fa-seedling"></i> Recommendations
+                </button>
+                <button class="nav-btn" onclick="location.href='dashboard.html?section=nurseries'">
+                    <i class="fas fa-store"></i> Nurseries
+                </button>
+                <button class="nav-btn" onclick="location.href='dashboard.html?section=garden'">
+                    <i class="fas fa-leaf"></i> My Garden
+                </button>
+                <button class="nav-btn" onclick="location.href='dashboard.html?section=maintenance'">
+                    <i class="fas fa-calendar-alt"></i> Maintenance
+                </button>
+                <button class="nav-btn" onclick="location.href='dashboard.html?section=identify'">
+                    <i class="fas fa-camera"></i> Identify Plant
+                </button>
+                <button class="nav-btn" onclick="location.href='settings.html'">
+                    <i class="fas fa-cog"></i> Settings
+                </button>
+            </div>
+            <div class="nav-profile">
+                <span id="userName">User</span>
+                <button class="profile-btn" onclick="showProfile()">
                     <i class="fas fa-user"></i>
-                    <span>Profile</span>
-                </a>
-                <a href="settings.html" class="navbar-link">
-                    <i class="fas fa-cog"></i>
-                    <span>Settings</span>
-                </a>
+                </button>
             </div>
-            <div class="navbar-profile">
-                <span>Welcome!</span>
-            </div>
-        </div>
-    </nav>
+        </nav>
 
     <div class="container">
         <header>
-            <h1>Hello??</h1>
-            <p>Welcome to your personalized plant care journey!</p>
+            <h1>Your Profile</h1>
+            <p>See your information below!</p>
         </header>
 
         <div id="profileInfo" class="profile-info">

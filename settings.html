@@ -10,21 +10,33 @@
 <body>
     <div class="dashboard-container">
         <!-- Navigation -->
-        <nav class="dashboard-nav">
+         <nav class="dashboard-nav">
             <a href="index.html" class="nav-brand">
-                <h1>🌿 Plantify</h1>
+                <h1>🌱Plantify</h1>
             </a>
             <div class="nav-menu">
-                <button class="nav-btn" onclick="location.href='dashboard.html'">
-                    <i class="fas fa-home"></i> Dashboard
+                <button class="nav-btn" onclick="location.href='dashboard.html?section=recommendations'">
+                    <i class="fas fa-seedling"></i> Recommendations
                 </button>
-                <button class="nav-btn active">
+                <button class="nav-btn" onclick="location.href='dashboard.html?section=nurseries'">
+                    <i class="fas fa-store"></i> Nurseries
+                </button>
+                <button class="nav-btn" onclick="location.href='dashboard.html?section=garden'">
+                    <i class="fas fa-leaf"></i> My Garden
+                </button>
+                <button class="nav-btn" onclick="location.href='dashboard.html?section=maintenance'">
+                    <i class="fas fa-calendar-alt"></i> Maintenance
+                </button>
+                <button class="nav-btn" onclick="location.href='dashboard.html?section=identify'">
+                    <i class="fas fa-camera"></i> Identify Plant
+                </button>
+                <button class="nav-btn" onclick="location.href='settings.html'">
                     <i class="fas fa-cog"></i> Settings
                 </button>
             </div>
             <div class="nav-profile">
                 <span id="userName">User</span>
-                <button class="profile-btn" onclick="location.href='profile-view.html'">
+                <button class="profile-btn" onclick="showProfile()">
                     <i class="fas fa-user"></i>
                 </button>
             </div>
