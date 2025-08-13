@@ -32,12 +32,12 @@ document.addEventListener("DOMContentLoaded", function() {
                     <span class="value">${profileData.name}</span>
                 </div>
                 <div class="profile-detail">
-                    <span class="label">ZIP Code:</span>
-                    <span class="value">${profileData.zip}</span>
-                </div>
-                <div class="profile-detail">
                     <span class="label">Location:</span>
                     <span class="value">${profileData.location}</span>
+                </div>
+                <div class="profile-detail">
+                    <span class="label">ZIP Code:</span>
+                    <span class="value">${profileData.zip}</span>
                 </div>
                 <div class="profile-detail">
                     <span class="label">Member Since:</span>
