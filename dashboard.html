@@ -166,7 +166,7 @@
                 </div><br>
                 <div class="custom-card">
                             <h3>Custom Care Tips</h3><br>
-                            <form>
+                            <form id="suggestionForm">
                             <div class="custom-card-text" style="justify-content: center;">
                                 <label for="plantName">Plant:  </label>
                                 <input type="text" id="plantName"><br><br>
@@ -274,6 +274,8 @@
             const plantProblem = document.getElementById("plantProblem").value;
             const placeInput = document.querySelector('input[name="place"]:checked').value;
 
+            document.getElementById('suggestionForm').reset();
+
             const response = await fetch(
             'https://noggin.rea.gent/beneficial-finch-3722',
             {
@@ -292,10 +294,6 @@
             ).then(response => response.text());
 
             document.getElementById("aiSuggestion").innerHTML = marked.parse(response);
-
-            plantName.value = "";
-            plantProblem.value = "";
-            placeInput.value = "";
         }
     </script>
 </body>
