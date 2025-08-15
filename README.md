@@ -1,6 +1,6 @@
 # Plantify
 
-Plantify is a web-based application that aims to help gardeners, new and old, manage their home gardens by providing a personalized plant care guide! Get recommendations for plants that suit your lifestyle, find local nurseries, keep track of watering schedules, and more! Check out below to see what you grow with Plantify!
+Plantify is a web-based application that aims to help gardeners manage their home gardens by providing a personalized plant care guide! Get recommendations for plants that suit your lifestyle, find local nurseries, keep track of watering schedules, and more! Check out below to see what you grow with Plantify!
 
 ## Features
 
