@@ -1,93 +1,40 @@
 # Plantify
 
-Plantify is a web-based application that aims to aid apartment gardeners, new and old, manage their indoor nurseries by providing a one-stop shop for all things plants! Find local nurseries, keep track of watering schedules, identify plants you see, and more! Check out bellow to see what you grow with Plantify!
+Plantify is a web-based application that aims to help gardeners, new and old, manage their home gardens by providing a personalized plant care guide! Get recommendations for plants that suit your lifestyle, find local nurseries, keep track of watering schedules, and more! Check out below to see what you grow with Plantify!
 
 ## Features
 
 1. **User Profile** - Create a profile to get personal recommendations for plants based off how much space, time, and experience you have! 
-2. **Local Plant Nursery Finder** - Users can input their zip codes to find local plant nurseries near them! (Currently bound to Bay Area)
-3. **Native Bay Area Plants** - Our database highlights the native plants that are easier to grow as a beginner, and also cheaper to maintain!
-4. **Virtual Garden** - Log whenever you buy a new plant to add it to your vistual garden! Keep inventory of all your plants and their growth!
-5. **Plant Maintenance Guide** - Low maintenance plant recommendations with filtering
+2. **Local Plant Nursery Finder** - Users can input their zip codes to find plant nurseries near them! (Currently bound to Bay Area)
+3. **Native Bay Area Plants** - Our database highlights California native plants for users with outdoor space, which tend to be more water friendly and well suited to the local ecosystem
+4. **Virtual Garden** - Log whenever you buy a new plant to add it to your vistual garden! Keep inventory of all your plants and when they need to be watered
 6. **Plant Watering Scheduler** - Never forget to water your plants again with our automated water schedules! Based on our database, we will recommend watering times and send reminders of when to water you plant.
-7. **Calendar Integration** - Export your plant watering schedule to your go
-8. **Plant Image Recognition** - Upload or take a photo of a plant you want (or see) and find out its name, care info, and even nurseries with it in stock!
+7. **Calendar Integration** - Export your plant watering schedule to your computer's calendar app
+8. **Custom Maintennce Tips** - Describe the problem that one of your plants is having, and receive an AI powered care guide to get your plant back to good health
 
 ### Key Functionality
 
 - **Personalized Recommendations**: Get plant suggestions based on your space, experience level, and preferences
 - **Bay Area Focus**: Currently supports ZIP codes starting with 94xxx (San Francisco Bay Area)
-- **Renter-Friendly**: Special focus on plants that travel well and don't damage rental spaces
-- **Pet Safety**: Filter for pet-safe plants
+- **Renter-Friendly**: If you're moving soon, you can filter for plants that travel well, which are potted plants and plants that you can take cuttings from
+- **Pet Safety**: Filter for plants that are non-toxic to animals
 - **Native Plants**: Support local ecosystems with native Bay Area plants
 - **Maintenance Tracking**: Never forget to water your plants again
 - **Local Nurseries**: Find where to buy plants near you
 
-## Getting Started
-
-### Prerequisites
-
-- A modern web browser (Chrome, Firefox, Safari, Edge)
-- Internet connection
-- Bay Area ZIP code (94xxx) for full functionality
-- React & Vite to run
-
-### Installation
-
-1. **Clone or Download** the project files
-2. **Open** use React & Vite to start up the app
-3. **Create a Profile** by clicking "Create Your Profile"
-4. **Start Exploring** the dashboard features
-
-### API Setup (Optional)
-
-For real plant identification:
-
-1. **Get Plant.id API Key**:
-   - Visit [Plant.id API Access](https://web.plant.id/api-access-request/)
-   - Sign up for a free account
-   - Copy your API key
-
-2. **Configure in App**:
-   - Go to Settings in the dashboard
-   - Paste your API key in the Plant Identification section
-   - Test the connection
-
-3. **Enable Notifications**:
-   - Allow browser notifications when prompted
-   - Configure notification preferences in Settings
-
-### API Integration
-- **Plant.id API**: Real plant identification (requires free API key)
-- **Google Calendar API**: Calendar integration (optional)
-- **Browser Notifications API**: Native notification support
-
-### Data Management
-- **Client-side Database**: Comprehensive plant and nursery data
-- **Local Storage**: User profiles and garden data
-- **Real-time Validation**: ZIP code and form validation
-
 ## License
 
-This project is for educational and demonstration purposes.
+This is a final project for CS160 (User Interface Design and Development) at UC Berkeley, created by Aditi Sharma, Anette Brecko, and Mikaela Castillo
 
 ## Acknowledgments
 
-- **Plant Data**: Curated from various horticultural resources
-- **Nursery Information**: Real Bay Area nursery data
+- **Plant Data**: Sourced from various horticultural resources, particularly calscape.org 
+- **Nursery Information**: Real Bay Area nursery data from Google Maps
 - **Design Inspiration**: Modern plant care and gardening apps
 - **Icons**: Font Awesome for the icon set
-
-## Support
-
-For questions or issues:
-- Check the browser console for error messages
-- Ensure you're using a Bay Area ZIP code (94xxx)
-- Try refreshing the page if features don't load
-- Clear browser cache if experiencing issues
 
 ---
 
 **Happy Planting!**
 
-*Plantify - Making plant care accessible and enjoyable for everyone in the Bay Area.* 
+*Plantify - Making plant care accessible and enjoyable for everyone in the Bay Area* 
